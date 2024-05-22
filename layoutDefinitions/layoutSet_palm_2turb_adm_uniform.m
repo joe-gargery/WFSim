@@ -8,15 +8,15 @@ Wp.sim = struct(...
     );
 
 Wp.turbine = struct(...
-    'Crx',[180 936],... % X-coordinates of turbines (m)
-    'Cry',[255 255],... % Y-coordinates of turbines (m)
-    'Drotor',110.0,... % Rotor diameter (m), note that WFSim only supports a uniform Drotor for now
+    'Crx',[40 91],... % X-coordinates of turbines (m)
+    'Cry',[25 25],... % Y-coordinates of turbines (m)
+    'Drotor',90.0,... % Rotor diameter (m), note that WFSim only supports a uniform Drotor for now
     'powerscale',1.0,... % Turbine power scaling
     'forcescale',1.7 ... % Turbine force scaling
     );
 
 Wp.site = struct(...
-    'u_Inf',7.986,... % Initial long. wind speed in m/s
+    'u_Inf',5,... % Initial long. wind speed in m/s
     'v_Inf',0.0,... % Initial lat. wind speed in m/s
     'p_init',0.0,... % Initial values for pressure terms (Pa)
     'lm_slope',0.01,... % Mixing length in x-direction (m)
@@ -26,10 +26,10 @@ Wp.site = struct(...
     );
 
 Wp.mesh = struct(...
-    'Lx',1686,... % Domain length in x-direction
-    'Ly',500,... % Domain length in y-direction
-    'Nx',40,... % Number of cells in x-direction
-    'Ny',20 ... % Number of cells in y-direction
+    'Lx',200,... % Domain length in x-direction
+    'Ly',50,... % Domain length in y-direction
+    'Nx',201,... % Number of cells in x-direction
+    'Ny',51 ... % Number of cells in y-direction
     );
 
 
