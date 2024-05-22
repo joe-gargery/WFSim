@@ -126,3 +126,22 @@ while sol.k < NN
 end
 disp(' ')
 disp(['Completed ' num2str(NN) ' forward simulations. Average CPU time: ' num2str(mean(CPUTime)*10^3,3) ' ms.']);
+
+%% visualize vorticity
+% dv = diff(sol.v);
+% du = diff(sol.u')';
+% vort = dv(:,1:end-1)-du(1:end-1,:);
+% x = linspace(0,20,201);
+% y = linspace(0,5,51);
+% clf, contourf(avg(x),avg(y),vort',20,'w-'), hold on
+% hold off, axis equal, axis([0 20 0 5])
+% vorti = sort(vort(:)); caxis(vorti([8 end-7]))
+% drawnow
+
+
+function B = avg(A,k)
+if nargin<2, k = 1; end
+if size(A,1)==1, A = A'; end
+if k<2, B = (A(2:end,:)+A(1:end-1,:))/2; else, B = avg(A,k-1); end
+if size(A,2)==1, B = B'; end
+end
